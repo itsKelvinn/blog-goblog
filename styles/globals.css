@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid gray;
+}
+
+.text {
+  padding: 0 10px;
+}
+
+.border-inputcolor {
+  border-color : #c9cace;
+}
+
+.card-shadow {
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+  width: 360px;
+}
+
+.app {
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.hambuger{
+  @apply w-full bg-slate-200 fixed right-0 sm:hidden transition-all ease-in translate-x-full  opacity-0;
+}
+
+.activeHumbuger{
+  @apply w-full bg-slate-200 fixed right-0 sm:hidden  transition-all ease-in translate-x-0 opacity-100;
+}
+
+.navlink {
+  @apply font-bold transition-all ease-in translate-x-28 opacity-0;
+}
+.navlinkActive {
+  @apply font-bold transition-all ease-in delay-300 translate-x-0 opacity-100;
+}
