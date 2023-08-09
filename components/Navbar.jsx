@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import UserAuth from '@/components/UserAuth';
 import { usePathname  } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
 
@@ -21,7 +22,7 @@ const Navbar = () => {
                 <nav className="block w-full h-16">
                     <div className="w-full flex justify-between py-3">        
                         <div className="flex justify-center items-center">
-                            <Link className="font-bold" href={"/"}>BlogGoBlogs</Link>
+                            <Link className="font-bold" href={"/"}> <Image src="/assets/blog-goblog-logo.svg" width={150} height={80}/>  </Link>
                         </div>
                         
                         <div className="flex gap-3 sm:flex hidden">
