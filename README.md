@@ -7,8 +7,8 @@ Bloggoblog is a user-friendly blogging platform that allows users to share their
 - Connect with others: Bloggoblog is a community of bloggers who share their interests and experiences. Connect with others who share your passions and engage in discussions on a wide range of topics.
 
 ## Technologies Used
-- Next.js: We use Next.js, a popular React-based framework, to build our front-end.
-- NextAuth.js: For authentication, we use NextAuth.js, a complete open-source authentication solution for Next.js applications.
-- Laravel: Our API is built using Laravel, a popular PHP framework for building modern web applications.
-- MySQL: We use MySQL as our database management system to store and manage our data.
-- Tailwind CSS: We use Tailwind CSS, a utility-first CSS framework, to style our application and create a consistent and responsive design.
+- Next.js: front-end.
+- NextAuth.js: authentication
+- Laravel: API
+- MySQL: Database management system
+- Tailwind CSS: style application and create a consistent and responsive design.
