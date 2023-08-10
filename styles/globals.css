@@ -29,6 +29,11 @@
   width: 360px;
 }
 
+.width-blog{
+  width: 32%;
+  height: 400px;
+}
+
 .app {
   @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
 }

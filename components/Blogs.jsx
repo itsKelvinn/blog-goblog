@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 const Blogs = () => {
     
     const [blogs,setBlogs] = useState([]);
@@ -37,12 +37,13 @@ const Blogs = () => {
                 }
 
                 return (
-                    <div key={blog.id} className="border rounded-md p-3">
-                    <Link href={'/blogs/' + blog.id}>
-                        <h1 className="font-bold">{blog.blog_title}</h1>
-                    </Link>
-                    <p>{blog.blog_content}</p>
-                    <p>{timeAgo}</p>
+                    <div key={blog.id} className="border rounded-md p-3 width-blog">
+                        <Image src="/assets/blog-default-pic.jpg" width={100} height={100}/>            
+                        <Link href={'/blogs/' + blog.id}>
+                            <h1 className="font-bold">{blog.blog_title}</h1>
+                        </Link>
+                        <p>{blog.blog_content}</p>
+                        <p>{timeAgo}</p>
                     </div>
                 );
             })}
