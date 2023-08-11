@@ -3,6 +3,7 @@ import { signIn } from "next-auth/react";
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const LoginPage = () => {
     
@@ -33,7 +34,7 @@ const LoginPage = () => {
         <div className="w-full h-screen flex justify-center items-center">
             <div className="flex flex-col p-10 gap-5 card-shadow">
                 <div className="m-5">
-                    <h1 className="text-center text-3xl font-bold">Blog.GoBlog</h1>
+                    <Image src="/assets/blog-goblog-logo.svg" width={300} height={20}/>                    
                 </div>
                 <div className="flex flex-col gap-3">
                     <p className="text-lg text-2xl text-center">Wellcome</p>

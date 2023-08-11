@@ -2,12 +2,18 @@
 import From from "@/components/Form";
 import { useRouter } from 'next/navigation';
 import { useState } from "react";
-
+import { useSession } from "next-auth/react";
 
 const CreateBlog = () => {
     
     const [blog,setBlog] = useState({blog_title: ' ' , blog_content: ' ' , user_id : 3});
     const router = useRouter();
+    const {session} = useSession();
+
+    if(!session)
+    {
+        router.push('/auth/signin');
+    }
 
     const postBlog = async (e) => {
         e.preventDefault();
