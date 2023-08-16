@@ -1,5 +1,4 @@
 import Blogs from "@/components/Blogs";
-import Image from "next/image";
 const Home = () => {
 
   return ( 
@@ -11,9 +10,7 @@ const Home = () => {
         </p>
       </div>
       <div className="w-full">
-        
           <Blogs/>
-        
       </div>
     </>
   );

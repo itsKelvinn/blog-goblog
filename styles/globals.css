@@ -52,3 +52,9 @@
 .navlinkActive {
   @apply font-bold transition-all ease-in delay-300 translate-x-0 opacity-100;
 }
+
+.aspect-ratio-16-9 {
+  width: 100%;
+  padding-bottom: 56.25%; /* <-- 16:9 aspect ratio (9 / 16 * 100) */
+  position: relative;
+}

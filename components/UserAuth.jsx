@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function UserAuth() {
     const {data : session } = useSession();
 
-    if (!session) {
+    if (session && session.user) {
         return (
         <>
           <button className="border text-black font-bold py-2 px-4 rounded active:bg-black active:text-white" onClick={() => signOut()}>Sign out</button>
