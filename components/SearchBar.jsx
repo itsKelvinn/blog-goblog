@@ -19,8 +19,8 @@ const SearchBar = ({ onSearch , style}) => {
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
             />
-            <button type="submit" className="flex px-1 border rounded border-l-0 rounded-l-none">
-                <Image src="/assets/search-icon.svg" width={40} height={40}/>
+            <button type="submit" className=" p-1 px-2 flex border rounded border-l-0 rounded-l-none">
+                <Image src="/assets/search-icon.svg" alt="search-icon" width={30} height={30}/>
             </button>
         </form>
     );

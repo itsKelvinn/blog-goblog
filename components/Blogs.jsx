@@ -57,15 +57,16 @@ export default function Posts() {
                 {blogs.data[2].categories.map(category => (<div className='font-bold text-xs text-white bg-black p-1 px-2 border rounded'>{category.category_title}</div>))}
               </div>
               <p className=''>{blogs.data[0].blog_content.split(' ').slice(0,50).join(' ') + "..."}</p>
-              <div className='flex gap-2 absolute bottom-0'>
+              <div className='flex items-center gap-2 absolute bottom-0'>
                 <p>{blogs.data[0].user.user_fullname}</p>
+                <div className='w-2 h-2 border border-black rounded-full bg-black'></div>
                 <p>{formatDate(blogs.data[0].created_at)}</p>
               </div>
           </div>
         </div>    
       )}
     
-
+      <p className='font-bold text-2xl mt-10 mb-3'>All Blog Posts</p>
       <div className="w-full grid grid-cols-3 gap-2">
           {/* {console.log(blogs.data[0])} */}
           
@@ -81,8 +82,10 @@ export default function Posts() {
                         objectFit="cover"
                       />
                   </div>
+                  
+                  <p className='font-bold text-xl mt-3 h-16'>{blog.blog_title}</p>
 
-                  <div className="w-full flex gap-2 my-3 justify-start items-center">
+                  <div className="w-full flex mb-3 gap-2 justify-start items-center">
                       {blog.categories.map(category => (
                       <div key={category.id} className="font-bold text-xs text-white bg-black p-1 px-2 border rounded">
                           {category.category_title}
@@ -90,10 +93,12 @@ export default function Posts() {
                       ))}
                   </div>
 
-                  <p className='font-bold text-xl'>{blog.blog_title}</p>
                   <p className='mb-10'>{blog.blog_content.split(' ').slice(0,30).join(' ') + "..."}</p>
-                  <div className='absolute bottom-2 flex justify-between pt-11'>
-                      <p>{blog.user.user_fullname}</p>
+
+                  <div className='flex items-center gap-2 absolute bottom-0'>
+                    <p>{blog.user.user_fullname}</p>
+                    <div className='w-2 h-2 border border-black rounded-full bg-black'></div>
+                    <p>{formatDate(blog.created_at)}</p>
                   </div>
               </div>
           ))}

@@ -34,12 +34,12 @@ const LoginPage = () => {
         <div className="w-full h-screen flex justify-center items-center">
             <div className="flex flex-col p-10 gap-5 card-shadow">
                 <div className="m-5">
-                    <Image src="/assets/blog-goblog-logo.svg" width={300} height={20}/>                    
+                    <Image src="/assets/blog-goblog-logo.svg" alt="blog-goblog-logo" width={300} height={20}/>                    
                 </div>
                 <div className="flex flex-col gap-3">
                     <p className="text-lg text-2xl text-center">Wellcome</p>
                     <p className="text-sm text-center">Select method to log in</p>
-                    <button onClick={() => signIn('google')} className="border border-inputcolor text-sm p-2 rounded">Sign in with Google</button>
+                    <button onClick={() => signIn('google', {callbackUrl: '/'})} className="border border-inputcolor text-sm p-2 rounded">Sign in with Google</button>
                 </div>
                 <div className="container">
                   <span className="text text-sm"><p>or continue with email</p></span>
