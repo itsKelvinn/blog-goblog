@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react";
-const SearchBar = ({ onSearch }) => {
+import Image from "next/image";
+
+const SearchBar = ({ onSearch , style}) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearch = (event) => {
@@ -9,14 +11,17 @@ const SearchBar = ({ onSearch }) => {
       };
     
     return (
-        <form onSubmit={handleSearch}>
+        <form onSubmit={handleSearch} className="flex items-start">
             <input
+                className={style}
                 type="text"
                 placeholder="Search..."
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
             />
-            <button type="submit">Search</button>
+            <button type="submit" className="flex px-1 border rounded border-l-0 rounded-l-none">
+                <Image src="/assets/search-icon.svg" width={40} height={40}/>
+            </button>
         </form>
     );
 }
