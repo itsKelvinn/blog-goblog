@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { getBlogs } from '@/lib/api';
+import { getBlogs , searchBlogs} from '@/lib/api';
 import SearchBar from './SearchBar';
 
 export default function Posts() {
@@ -11,12 +11,16 @@ export default function Posts() {
     async function fetchData() {
       const data = await getBlogs();
       setBlogs(data);
+      console.log(data);
     }
     fetchData();
   }, []);
 
-  const handleBlogSearch = (searchTerm) => {
+  const handleBlogSearch = async (searchTerm) => {
     console.log(searchTerm);
+    const data = await searchBlogs(searchTerm);
+    setBlogs(data);
+    console.log(data);
   };
 
   function formatDate(dateString) {
@@ -52,9 +56,9 @@ export default function Posts() {
 
 
           <div className='flex flex-col h-full relative w-500px'>
-              <p className='text-3xl font-bold mb-6 mt-5'>{blogs.data[1].blog_title}</p>
+              <p className='text-3xl font-bold mb-6 mt-5'>{blogs.data[0].blog_title}</p>
               <div className='flex gap-2 mb-4'>
-                {blogs.data[2].categories.map(category => (<div className='font-bold text-xs text-white bg-black p-1 px-2 border rounded'>{category.category_title}</div>))}
+                {blogs.data[0].categories.map(category => (<div className='font-bold text-xs text-white bg-black p-1 px-2 border rounded'>{category.category_title}</div>))}
               </div>
               <p className=''>{blogs.data[0].blog_content.split(' ').slice(0,50).join(' ') + "..."}</p>
               <div className='flex items-center gap-2 absolute bottom-0'>
@@ -67,7 +71,7 @@ export default function Posts() {
       )}
     
       <p className='font-bold text-2xl mt-10 mb-3'>All Blog Posts</p>
-      <div className="w-full grid grid-cols-3 gap-2">
+      <div className="w-full grid grid-cols-3 gap-2 mb-10">
           {/* {console.log(blogs.data[0])} */}
           
   
@@ -95,7 +99,7 @@ export default function Posts() {
 
                   <p className='mb-10'>{blog.blog_content.split(' ').slice(0,30).join(' ') + "..."}</p>
 
-                  <div className='flex items-center gap-2 absolute bottom-0'>
+                  <div className='flex items-center gap-2 absolute bottom-2'>
                     <p>{blog.user.user_fullname}</p>
                     <div className='w-2 h-2 border border-black rounded-full bg-black'></div>
                     <p>{formatDate(blog.created_at)}</p>
