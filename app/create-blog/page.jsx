@@ -6,14 +6,16 @@ import { useSession } from "next-auth/react";
 
 const CreateBlog = () => {
     
-    const [blog,setBlog] = useState({blog_title: ' ' , blog_content: ' ' , user_id : 3});
     const router = useRouter();
-    const {session} = useSession();
-
+    const {data : session} = useSession();
+    const [blog,setBlog] = useState({blog_title: ' ' , blog_content: ' ' , user_id : null, categories : []});
+    
     if(!session)
     {
         router.push('/auth/signin');
     }
+
+    console.log('blog : ' ,blog);
 
     const postBlog = async (e) => {
         e.preventDefault();
@@ -24,8 +26,9 @@ const CreateBlog = () => {
             },
             body: JSON.stringify({
                 blog_title : blog.blog_title ,
-                blog_content : blog.blog_content ,
-                user_id : blog.user_id
+                blog_content : blog.blog_content,
+                user_id : session.user.id,
+                categories : blog.categories 
             })
         });
 

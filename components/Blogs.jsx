@@ -38,7 +38,7 @@ export default function Posts() {
   return (
     <>
       <div className='flex w-full justify-center'>
-        <SearchBar onSearch={handleBlogSearch} style={"w-96 h-10 p-2 mb-10 bg-gray-100 border rounded text-sm  border-r-0 rounded-r-none"}/>
+        <SearchBar onSearch={handleBlogSearch} style={"w-96 h-10 p-2 mb-10 bg-gray-100 border rounded text-sm  border-r-0 rounded-r-none outline-none"}/>
       </div>
       
       {blogs.data && (
@@ -54,7 +54,7 @@ export default function Posts() {
             </div>
           </div>
 
-
+          {console.log('data : ' , blogs.data)}
           <div className='flex flex-col h-full relative w-500px'>
               <p className='text-3xl font-bold mb-6 mt-5'>{blogs.data[0].blog_title}</p>
               <div className='flex gap-2 mb-4'>
