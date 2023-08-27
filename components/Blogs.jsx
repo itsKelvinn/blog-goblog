@@ -26,11 +26,7 @@ export default function Posts() {
   function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const formattedDate = new Date(dateString).toLocaleDateString('nl-NL', options);
-    
-    // Split the formatted date into parts (day, month, year)
     const [day, month, year] = formattedDate.split(' ');
-
-    // Capitalize the first letter of the month and rejoin the date
     return `${day} ${month.charAt(0).toUpperCase() + month.slice(1)} ${year}`;
   }
 
